@@ -1,4 +1,4 @@
-package main;
+package ru.berkut.factory;
 /**
  * Создание класса, для обработки исключений
  */

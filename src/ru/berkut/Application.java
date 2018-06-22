@@ -1,18 +1,18 @@
-package main;
-import java.text.*;
+package ru.berkut;
 import java.util.*;
-import main.Generation;
-import main.Document;
+import ru.berkut.factory.Factory;
+import ru.berkut.factory.Storable;
+import ru.berkut.model.Document;
+import ru.berkut.factory.DocumentExistsExeption;
 /**
  * Создание класса консольного приложения 
  */
 public class Application {
 	public static void main (String[] args)  throws DocumentExistsExeption{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 		/**
 		 * Сохранение создаваемых документор
 		 */
-		Generation document = new Generation();	
+		Factory document = new Factory();	
 		TreeSet<Document> data = new TreeSet<Document>();
 		System.out.println(" 1 - Поручение \n 2 - Входящий документ \n 3 - Исходящий документ \n 4 - Создать отчет ");
 		/**
@@ -22,7 +22,7 @@ public class Application {
         while (!"0".equals(in.hasNextInt())) {
             TreeSet<String> setOfAuthors = new TreeSet<String>();                 
             for (Document e: Storable.data) {        	
-            	setOfAuthors.add(e.DocAuthor);        	
+            	setOfAuthors.add(e.getDocAuthor());        	
             }
         	int a = in.nextInt();
             if (a == 1) {
@@ -51,9 +51,9 @@ public class Application {
                 for (String b: setOfAuthors) {
                 	System.out.println(" - "+b);        	        	
                 	for (Document e: Storable.data) {
-                		if (b==e.DocAuthor) {
-                			System.out.println("       - "+Generation.type(e)+" от "+
-                		Generation.dateFormat.format(e.RegDocDate) + " Рег.№: " + e.RegDocNumber);
+                		if (b==e.getDocAuthor()) {
+                			System.out.println("       - "+Factory.type(e)+" от "+
+                		Factory.dateFormat.format(e.getRegDocDate()) + " Рег.№: " + e.getRegDocNumber());
                 		}
                 		
                 	}

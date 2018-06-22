@@ -1,7 +1,7 @@
-package main;
+package ru.berkut.model;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
 /**
  * Создание абстрактного  класса Документ
  */
@@ -9,30 +9,66 @@ public abstract class Document implements Comparable<Object>{
 /**
  * Объявление переменной, содержащей идентификатор документа
  */
-String DocID;
+private String DocID;
 /**
  * Объявление переменной, содержащей наименование документа
  */
-String DocName;
+private String DocName;
 /**
  * Объявление переменной, содержащей текст документа
  */
-String DocText;
+private String DocText;
 /**
  * Объявление переменной, содержащей регистрационный номер документа
  */
-int RegDocNumber;
+private int RegDocNumber;
 /**
  * Объявление переменной, содержащей дату регистации документа
  */
-Date RegDocDate;
+private Date RegDocDate;
 /**
  * Объявление переменной, содержащей автора документа
  */
-String DocAuthor;
+private String DocAuthor;
+
+	public String getDocID() {
+		return DocID;
+	}
+	public void setDocID(String DocID) {
+		this.DocID = DocID;
+	}
+	public String getDocName() {
+		return DocName;
+	}
+	public void setDocName(String DocName) {
+		this.DocName = DocName;
+	}
+	public String getDocText() {
+		return DocText;
+	}
+	public void setDocText(String DocText) {
+		this.DocText = DocText;
+	}
+	public int getRegDocNumber() {
+		return RegDocNumber;
+	}
+	public void setRegDocNumber(int RegDocNumber) {
+		this.RegDocNumber = RegDocNumber;
+	}
+	public Date getRegDocDate() {
+		return RegDocDate;
+	}
+	public void setRegDocDate(Date RegDocDate) {
+		this.RegDocDate = RegDocDate;
+	}
+	public String getDocAuthor() {
+		return DocAuthor;
+	}
+	public void setDocAuthor(String DocAuthor) {
+		this.DocAuthor = DocAuthor;
+	}
 
 SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-
 	public int compareTo(Object obj){ 
 			Document entry = (Document) obj; 
 			/**
@@ -40,8 +76,7 @@ SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 			 */
 			String author=this.DocAuthor;
 			int result = author.compareTo(entry.DocAuthor);
-			if(result != 0)
-				return result;
+			if(result != 0)	return result;
 			/**
 			 * Сортировка по дате регистации документа
 			 */
