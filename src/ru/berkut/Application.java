@@ -1,5 +1,8 @@
 package ru.berkut;
 import java.util.*;
+
+import javax.xml.bind.JAXBException;
+
 import ru.berkut.factory.Factory;
 import ru.berkut.factory.Storable;
 import ru.berkut.model.Document;
@@ -8,57 +11,46 @@ import ru.berkut.factory.DocumentExistsExeption;
  * Создание класса консольного приложения 
  */
 public class Application {
-	public static void main (String[] args)  throws DocumentExistsExeption{
+	public static void main (String[] args)  throws DocumentExistsExeption, JAXBException{
 		/**
 		 * Сохранение создаваемых документор
 		 */
 		Factory document = new Factory();	
-		TreeSet<Document> data = new TreeSet<Document>();
-		System.out.println(" 1 - Поручение \n 2 - Входящий документ \n 3 - Исходящий документ \n 4 - Создать отчет ");
 		/**
-		 * Считывание введенных данных с консоли
+		 * Задание типа создаваемых документов
 		 */
-		Scanner in = new Scanner(System.in);
-        while (!"0".equals(in.hasNextInt())) {
-            TreeSet<String> setOfAuthors = new TreeSet<String>();                 
-            for (Document e: Storable.data) {        	
-            	setOfAuthors.add(e.getDocAuthor());        	
-            }
-        	int a = in.nextInt();
-            if (a == 1) {
-            	/**
-        		 * Создание и вывод поручения
-        		 */
-            Document o=document.MakeDocument("Task");
-            System.out.println(o.toString());
-            }if (a == 2) {
-            	/**
-        		 * Создание и вывод входящего документа
-        		 */
-            Document o=document.MakeDocument("Incoming");
-    		System.out.println(o.toString());
-            }if (a == 3) {
-            	/**
-        		 * Создание и вывод исходящего документа
-        		 */
-            Document o=document.MakeDocument("Outgoing");
-    		System.out.println(o.toString());
-            }
-            if (a == 4) {
-            	/**
-        		 * Создание отчета
-        		 */
-                for (String b: setOfAuthors) {
-                	System.out.println(" - "+b);        	        	
-                	for (Document e: Storable.data) {
-                		if (b==e.getDocAuthor()) {
-                			System.out.println("       - "+Factory.type(e)+" от "+
+		String setOfDocuments[] = {"Incoming", "Task", "Outgoing"};
+		/**
+		 * Создание документов
+		 */
+		for (int i=0;i<setOfDocuments.length;i++) {        	       	
+        	try{
+        		Document d=document.MakeDocument(setOfDocuments[i]);
+        		System.out.println(d.toString());
+        	}catch(DocumentExistsExeption ex){
+        		System.out.println(ex.getMessage());	
+        	}        	      	    	
+		}
+		/**
+		 * Сохранение авторов документов
+		 */
+		 TreeSet<String> setOfAuthors = new TreeSet<String>();   		 	
+           for (Document e: Storable.data) {        	
+           setOfAuthors.add(e.getDocAuthor()); 
+           }
+           /**
+		  	* Создание отчета
+		 	*/
+           for (String s: setOfAuthors) {
+        	   System.out.println(" - " + s);        	        	
+        	   for (Document e: Storable.data) {
+        		   if (s.equals(e.getDocAuthor())) {
+                		System.out.println("       - "+Factory.type(e)+ " от " +
                 		Factory.dateFormat.format(e.getRegDocDate()) + " Рег.№: " + e.getRegDocNumber());
                 		}
-                		
-                	}
-                }
-            }
+        		
+                	}       
+		
             }
         }
 }

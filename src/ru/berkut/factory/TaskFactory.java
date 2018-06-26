@@ -1,10 +1,15 @@
 package ru.berkut.factory;
 
+import javax.xml.bind.JAXBException;
+
 import ru.berkut.model.Document;
 import ru.berkut.model.Task;
 
 public class TaskFactory extends Factory{
-	public static Document createTask() {
+	/**
+	 * Создание метода генерации поручения
+	 */
+	public static Document createTask() throws JAXBException {
     	Task task = new Task();
     	FactoryGeneration.makeDataTask(task);
     	FactoryGeneration.makeTermTask(task);

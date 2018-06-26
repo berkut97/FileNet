@@ -1,13 +1,19 @@
 package ru.berkut.factory;
 
 import java.math.BigInteger;
+
 import java.security.SecureRandom;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
+import javax.xml.bind.JAXBException;
+
+import ru.berkut.download.Download;
 import ru.berkut.factory.Data;
 import ru.berkut.model.*;
-
+/**
+ * Создание класса описания методов создания полей документов
+ */
 public class FactoryGeneration {
 	public static int makeRegDocNumber(){
 		return (int)(Math.random()*100000);			
@@ -20,8 +26,9 @@ public class FactoryGeneration {
 	public static void makeDocID(Document document){
 		document.setDocID(String.format("%.0f%n",(Math.random()*10000)));
 	}
-	public static void makeDocAuthor(Document document){
-		document.setDocAuthor(Data.DocAuthor[new Random().nextInt(3)]);
+	public static void makeDocAuthor(Document document) throws JAXBException{
+		Download.unMarshalingPerson();
+		document.setDocAuthor(Download.getPersonName());
 	}	
 	public static String generateString(int byteLength) {
 		SecureRandom secureRandom = new SecureRandom();
@@ -43,22 +50,26 @@ public class FactoryGeneration {
     	newGregCal = RandomDate();
     	incoming.setOutDataReg(newGregCal.getTime());
     }
-    public static void makeSender(Incoming incoming){
-    	incoming.setSender(Data.Sender[new Random().nextInt(3)]);
+    public static void makeSender(Incoming incoming) throws JAXBException{
+    	Download.unMarshalingPerson();
+    	incoming.setSender(Download.getPersonName());
     }
-    public static void makeAddress(Incoming incoming){
-    	incoming.setAddress(Data.Address[new Random().nextInt(3)]);
+    public static void makeAddress(Incoming incoming) throws JAXBException{
+    	Download.unMarshalingPerson();
+    	incoming.setAddress(Download.getPersonName());
     }
     public static void makeDataTask(Task task){
     	GregorianCalendar newGregCal = new GregorianCalendar();
     	newGregCal = RandomDate();
     	task.setDateTask(newGregCal.getTime());
     }
-    public static void makeExecutorTask(Task task){    	
-    	task.setExecutorTask(Data.ExecutorTask[new Random().nextInt(3)]);
+    public static void makeExecutorTask(Task task) throws JAXBException{  
+    	Download.unMarshalingPerson();
+    	task.setExecutorTask(Download.getPersonName());
     }
-    public static void makeControllerTask(Task task){    	
-    	task.setControllerTask(Data.ControllerTask[new Random().nextInt(3)]);
+    public static void makeControllerTask(Task task) throws JAXBException{    
+    	Download.unMarshalingPerson();
+    	task.setControllerTask(Download.getPersonName());
     }
     public static void makeAttrControl(Task task){
     	task.setAttrControl(Data.AttrControl[new Random().nextInt(4)]);
@@ -68,8 +79,9 @@ public class FactoryGeneration {
     	newGregCal = RandomDate();
     	task.setTermTask(newGregCal.getTime());
     }
-    public static void makeAddress(Outgoing outgoing){
-    	outgoing.setAddress(Data.Address[new Random().nextInt(3)]);
+    public static void makeAddress(Outgoing outgoing) throws JAXBException{
+    	Download.unMarshalingPerson();
+    	outgoing.setAddress(Download.getPersonName());
     }
     
     public static void makeDelivery(Outgoing outgoing){

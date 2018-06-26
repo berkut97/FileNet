@@ -2,6 +2,8 @@ package ru.berkut.factory;
 
 import java.text.SimpleDateFormat;
 
+import javax.xml.bind.JAXBException;
+
 import ru.berkut.model.*;
 /**
  * Создание класса для генерации общих полей документа
@@ -10,8 +12,9 @@ public class Factory {
 	public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 	/**
 	 * Создание метода формирования общих полей документа
+	 * @throws JAXBException 
 	 */
-	public  Document makeCommonFields(Document document) {
+	public  Document makeCommonFields(Document document) throws JAXBException {
 		FactoryGeneration.makeDocID(document);
 		FactoryGeneration.makeDocAuthor(document);
 		FactoryGeneration.makeDocName(document);
@@ -22,8 +25,9 @@ public class Factory {
 	/**
 	 * Создание документа
 	 * Создание его регистационного номера с использованием проверки исключения
+	 * @throws JAXBException 
 	 */
-	public Document MakeDocument(String kind) throws DocumentExistsExeption{ 
+	public Document MakeDocument(String kind) throws DocumentExistsExeption, JAXBException{ 
 		int regDocNumber=FactoryGeneration.makeRegDocNumber();
 		Storable.check(Storable.data, regDocNumber);
  	 	Document document = createDocument(kind);
@@ -45,8 +49,9 @@ public class Factory {
 	}
 	/**
 	 * Создание метода для выбора типа документа при его создании 
+	 * @throws JAXBException 
 	 */
-	public static Document createDocument(String kind){
+	public static Document createDocument(String kind) throws JAXBException{
 		switch (kind){
 			case "Task": return TaskFactory.createTask();
         	case "Incoming": return IncomingFactory.createIncoming();
