@@ -1,2 +1,7 @@
+Person.xml
+.classpath
+/.settings/
 /bin/
 /target/
+.project
+
