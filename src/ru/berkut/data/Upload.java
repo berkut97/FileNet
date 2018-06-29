@@ -1,4 +1,4 @@
-package ru.berkut.download;
+package ru.berkut.data;
 import java.io.File;
 import java.util.Random;
 
@@ -7,16 +7,19 @@ import javax.xml.bind.JAXBException;
 
 import javax.xml.bind.Unmarshaller;
 
-import ru.berkut.model.*;
+import ru.berkut.model.Employees;
+import ru.berkut.model.Person;
+
 /**
 	* Создание класса для загрузки данных из XML-документов
 	*/
-public class Download {
+public class Upload {
+	
 	static Employees employees = new Employees();
 	/**
   	* Объявление переменной для хранения ФИО сотрудника
  	*/
-	private static String PersonName;
+	private static String personName;
 	/**
   	* Создание метода для загрузки данных сотрудника из XML-документа
  	*/
@@ -34,10 +37,13 @@ public class Download {
 	 	*/
 	    setPersonName(p.getFirstName() + " " + p.getSecondName() + " " + p.getPatronymic());
 	}
+	
 	public static String getPersonName() {
-		return PersonName;
+		return personName;
 	}
-	public static void setPersonName(String personName) {
-		PersonName = personName;
+	
+	public static void setPersonName(String PersonName) {
+		personName = PersonName;
 	}
+	
 }

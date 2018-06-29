@@ -4,7 +4,6 @@ package ru.berkut.factory;
  */
 public class DocumentExistsExeption extends Exception{
 	
-    private static final long serialVersionUID = 1L;
 	public DocumentExistsExeption(String message){	     	        
 	super(message);		    
 	}	        

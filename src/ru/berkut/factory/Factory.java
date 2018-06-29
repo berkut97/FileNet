@@ -4,7 +4,11 @@ import java.text.SimpleDateFormat;
 
 import javax.xml.bind.JAXBException;
 
-import ru.berkut.model.*;
+import ru.berkut.model.Document;
+import ru.berkut.model.Incoming;
+import ru.berkut.model.Outgoing;
+import ru.berkut.model.Task;
+
 /**
  * Создание класса для генерации общих полей документа
  */
@@ -31,7 +35,7 @@ public class Factory {
 		int regDocNumber=FactoryGeneration.makeRegDocNumber();
 		Storable.check(Storable.data, regDocNumber);
  	 	Document document = createDocument(kind);
-        document.setRegDocNumber(regDocNumber);
+        document.setRegNumber(regDocNumber);
         makeCommonFields(document);
         Storable.data.add(document);
     	return document;
@@ -60,4 +64,5 @@ public class Factory {
     
 		}
 	}
+	
 }

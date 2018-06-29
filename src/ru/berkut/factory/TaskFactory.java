@@ -18,4 +18,5 @@ public class TaskFactory extends Factory{
     	FactoryGeneration.makeAttrControl(task);    	
 		return task;   			
     }
+	
 }

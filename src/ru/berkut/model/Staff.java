@@ -3,12 +3,15 @@ package ru.berkut.model;
  * Создание класса абстрактного класса Элемент организационной структуры
  */
 public abstract class Staff {
-	private String StaffID;
+	
+	private String staffID;
 	
 	public String getStaffID() {
-		return StaffID;
+		return staffID;
 	}
+	
 	public void setStaffID(String StaffID) {
-		this.StaffID = StaffID;
+		this.staffID = StaffID;
 	}
+	
 }

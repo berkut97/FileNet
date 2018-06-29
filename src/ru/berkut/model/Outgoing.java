@@ -6,31 +6,31 @@ public class Outgoing extends Document{
 	/**
 	* Создание переменной, содержащей адресата
 	*/
-	private String Address;
+	private String address;
 	/**
 	* Создание переменной, содержащей способ доставки
 	*/
-	private String Delivery;
+	private String delivery;
 	/**
  	* Создание метода для вывода содержимого в консоль
  	*/
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 	public void setAddress(String Address) {
-		this.Address = Address;
+		this.address = Address;
 	}
 	public String getDelivery() {
-		return Delivery;
+		return delivery;
 	}
 	public void setDelivery(String Delivery) {
-		this.Delivery = Delivery;
+		this.delivery = Delivery;
 	}
 	public String toString() {
-   		return "Исходящий документ №" + getRegDocNumber() +" ID: " + getDocID() + " " + 
-   				getDocName() + " Дата регистрации: " + getRegDocDate() + ", Автор: " + getDocAuthor() + 
-   				" Текст документа: " + getDocText() + " Адресат: " + Address + " Способ доставки: "
-   				+ Delivery;
+   		return "Исходящий документ №" + getRegNumber() +" ID: " + getID() + " " + 
+   				getName() + " Дата регистрации: " + getRegDate() + ", Автор: " + getAuthor() + 
+   				" Текст документа: " + getText() + " Адресат: " + address + " Способ доставки: "
+   				+ delivery;
 
        }
 }

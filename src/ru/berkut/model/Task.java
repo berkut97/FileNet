@@ -1,6 +1,7 @@
 package ru.berkut.model;
 
-import java.util.*;
+import java.util.Date;
+
 /**
  * Создание класса Поручение, который наследует абстрактный класс Документ
  */
@@ -8,63 +9,73 @@ public class Task extends Document{
 	/**
 	* Создание переменной, содержащей дату выдачи поручения
 	*/
-	Date DateTask;
+	Date date;
 	/**
 	* Создание переменной, содержащей срок исполнения поручения
 	*/
-	Date TermTask;
+	Date term;
 	/**
 	* Создание переменной, содержащей исполнителя
 	*/
-	String ExecutorTask;
+	String executor;
 	/**
 	* Создание переменной, содержащей признак контрольности
 	*/
-	String AttrControl;
+	String attrControl;
 	/**
 	* Создание переменной, содержащей контрелера поручения
 	*/
-	String ControllerTask;
+	String  controller;
 	/**
 	* Создание метода для вывода содержимого в консоль
 	*/
-	public Date getDateTask() {
-		return DateTask;
+	public Date getDate() {
+		return date;
 	}
-	public void setDateTask(Date DateTask) {
-		this.DateTask = DateTask;
+	
+	public void setDate(Date Date) {
+		this.date = Date;
 	}
-	public Date getTermTask() {
-		return TermTask;
+	
+	public Date getTerm() {
+		return term;
 	}
-	public void setTermTask(Date TermTask) {
-		this.TermTask = TermTask;
+	
+	public void setTerm(Date Term) {
+		this.term = Term;
 	}
-	public String getExecutorTask() {
-		return ExecutorTask;
+	
+	public String getExecutor() {
+		return executor;
 	}
-	public void setExecutorTask(String ExecutorTask) {
-		this.ExecutorTask = ExecutorTask;
+	
+	public void setExecutor(String Executor) {
+		this.executor = Executor;
 	}
+	
 	public String getAttrControl() {
-		return AttrControl;
+		return attrControl;
 	}
+	
 	public void setAttrControl(String AttrControl) {
-		this.AttrControl = AttrControl;
+		this.attrControl = AttrControl;
 	}
+	
 	public String getControllerTask() {
-		return ControllerTask;
+		return controller;
 	}
+	
 	public void setControllerTask(String ControllerTask) {
-		this.ControllerTask = ControllerTask;
+		this.controller = ControllerTask;
 	}
 
 	public String toString() {
-		return "Поручение № "+ getRegDocNumber() + " ID:  " + getDocID() + " " + getDocName() +
-			" Дата регистрации: " + getRegDocDate() + ", Автор: " + getDocAuthor() + 
-			" Текст документа: "+ getDocText() + " Дата выдачи: "+ getDateTask() +
-			" Срок исполнения: " + getTermTask() + " Ответственный исполнитель: "+ 
-			getExecutorTask()+ " Признак контрольности: "+ getAttrControl() +" Контролер: "
-			+ getControllerTask();
+		return "Поручение № "+ getRegNumber() + " ID:  " + getRegDate() + " " + getName() +
+			" Дата регистрации: " + getDate() + ", Автор: " + getAuthor() + 
+			" Текст документа: "+ getText() + " Дата выдачи: "+ date +
+			" Срок исполнения: " + term + " Ответственный исполнитель: "+ 
+			executor+ " Признак контрольности: "+ attrControl +" Контролер: "
+			+ controller;
 	}
+	
 }

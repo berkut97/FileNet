@@ -15,4 +15,5 @@ public class OutgoingFactory extends Factory{
     	FactoryGeneration.makeAddress(outgoing);    	
 		return outgoing;   			
     }
+	
 }

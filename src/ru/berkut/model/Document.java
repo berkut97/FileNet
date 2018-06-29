@@ -1,6 +1,5 @@
 package ru.berkut.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 /**
  * Создание абстрактного  класса Документ
@@ -9,88 +8,100 @@ public abstract class Document implements Comparable<Object>{
 /**
  * Объявление переменной, содержащей идентификатор документа
  */
-private String DocID;
+private int id;
 /**
  * Объявление переменной, содержащей наименование документа
  */
-private String DocName;
+private String name;
 /**
  * Объявление переменной, содержащей текст документа
  */
-private String DocText;
+private String text;
 /**
  * Объявление переменной, содержащей регистрационный номер документа
  */
-private int RegDocNumber;
+private int regNumber;
 /**
  * Объявление переменной, содержащей дату регистации документа
  */
-private Date RegDocDate;
+private Date regDate;
 /**
  * Объявление переменной, содержащей автора документа
  */
-private String DocAuthor;
+private String author;
 
-	public String getDocID() {
-		return DocID;
+	public int getID() {
+		return id;
 	}
-	public void setDocID(String DocID) {
-		this.DocID = DocID;
+	
+	public void setID(int ID) {
+		this.id = ID;
 	}
-	public String getDocName() {
-		return DocName;
+	
+	public String getName() {
+		return name;
 	}
-	public void setDocName(String DocName) {
-		this.DocName = DocName;
+	
+	public void setName(String Name) {
+		this.name = Name;
 	}
-	public String getDocText() {
-		return DocText;
+	
+	public String getText() {
+		return text;
 	}
-	public void setDocText(String DocText) {
-		this.DocText = DocText;
+	
+	public void setText(String Text) {
+		this.text = Text;
 	}
-	public int getRegDocNumber() {
-		return RegDocNumber;
+	
+	public int getRegNumber() {
+		return regNumber;
 	}
-	public void setRegDocNumber(int RegDocNumber) {
-		this.RegDocNumber = RegDocNumber;
+	
+	public void setRegNumber(int RegNumber) {
+		this.regNumber = RegNumber;
 	}
-	public Date getRegDocDate() {
-		return RegDocDate;
+	
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRegDocDate(Date RegDocDate) {
-		this.RegDocDate = RegDocDate;
+	
+	public void setRegDate(Date RegDate) {
+		this.regDate = RegDate;
 	}
-	public String getDocAuthor() {
-		return DocAuthor;
+	
+	public String getAuthor() {
+		return author;
 	}
-	public void setDocAuthor(String DocAuthor) {
-		this.DocAuthor = DocAuthor;
+	
+	public void setAuthor(String Author) {
+		this.author = Author;
 	}
 
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 	public int compareTo(Object obj){ 
+		
 			Document entry = (Document) obj; 
 			/**
 			 * Сортировка по автору
 			 */
-			String author=this.DocAuthor;
-			int result = author.compareTo(entry.DocAuthor);
+			String author=this.author;
+			int result = author.compareTo(entry.author);
 			if(result != 0)	return result;
 			/**
 			 * Сортировка по дате регистации документа
 			 */
-			Date dateDoc = this.RegDocDate;
-			result = dateDoc.compareTo(entry.RegDocDate); 
+			Date dateDoc = this.regDate;
+			result = dateDoc.compareTo(entry.regDate); 
 			if(result != 0) return result; 
 			/**
 			 * Сортировка по регистрационному номеру документа
 			 */
-			int regDoc=this.RegDocNumber;
-			result = regDoc - entry.RegDocNumber; 
+			int regDoc=this.regNumber;
+			result = regDoc - entry.regNumber; 
 			if(result!=0) 
 				return (int) result/Math.abs(result); 
 			return 0; 
 	} 
+	
 }
 

@@ -5,33 +5,45 @@ import ru.berkut.model.Staff;
  * Создание класса Подразделение, который наследует абстрактный класс Элемент организационной структуры
  */
 public class Department extends Staff{
-	private String FullName;
-	private String ShortTitle;
-	private String Head;
-	private String Phone;
+	
+	private String fullName;
+	
+	private String shortTitle;
+	
+	private String head;
+	
+	private String phone;
 	
 	public String getFullName() {
-		return FullName;
+		return fullName;
 	}
+	
 	public void setDocID(String FullName) {
-		this.FullName = FullName;
+		this.fullName = FullName;
 	}
+	
 	public String getShortTitle() {
-		return ShortTitle;
+		return shortTitle;
 	}
+	
 	public void setShortTitle(String ShortTitle) {
-		this.ShortTitle = ShortTitle;
+		this.shortTitle = ShortTitle;
 	}
+	
 	public String getHead() {
-		return Head;
+		return head;
 	}
+	
 	public void setHead(String Head) {
-		this.Head = Head;
+		this.head = Head;
 	}
+	
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
+	
 	public void setPhone(String Phone) {
-		this.Phone = Phone;
+		this.phone = Phone;
 	}
+	
 }

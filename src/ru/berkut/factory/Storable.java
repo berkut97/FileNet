@@ -12,9 +12,10 @@ public class Storable {
 	 */
 	public static void check(TreeSet<Document> tree, int regDocNumber) throws DocumentExistsExeption{
 		for (Document e: tree) {
-			if (regDocNumber==e.getRegDocNumber())  {       
+			if (regDocNumber==e.getRegNumber())  {       
 				throw new DocumentExistsExeption("Документ с таким регистрационным номером уже существует");   
 			}		
 		}
 	}
+	
 }

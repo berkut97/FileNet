@@ -1,4 +1,4 @@
-package ru.berkut.factory;
+package ru.berkut.data;
 /**
  * Создание класса, содержащего массивы исходных данных
  */
@@ -9,4 +9,5 @@ public class Data {
 	public static String[] Delivery = {"Курьером", "Почтой"};
 	
 	public static String[] AttrControl = {"Получено", "Выполняется", "Выполнено", "Не выполнено"};
+
 }
