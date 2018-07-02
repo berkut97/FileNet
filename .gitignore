@@ -1,7 +1,7 @@
 Person.xml
 .classpath
-/.settings/
-/bin/
-/target/
+.settings
+bin
+target
 .project
 
