@@ -1,7 +1,6 @@
-Person.xml
-.classpath
-.settings
-bin
-target
-.project
-.gitignore
+/target/
+/Person.xml
+/pom.xml
+/.classpath
+/.gitignore
+/.project
