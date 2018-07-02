@@ -2,6 +2,7 @@ package ru.berkut.model;
 
 import ru.berkut.model.Staff;
 /**
+ * @author berkut
  * Создание класса Организация, который наследует абстрактный класс Элемент организационной структуры
  */
 public class Organigation extends Staff{

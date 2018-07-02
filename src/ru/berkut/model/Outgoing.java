@@ -1,5 +1,6 @@
 package ru.berkut.model;
 /**
+ * @author berkut
  * Создание класса Исходящий документ, который наследует абстрактный класс Документ
  */
 public class Outgoing extends Document{
@@ -12,20 +13,37 @@ public class Outgoing extends Document{
 	*/
 	private String delivery;
 	/**
- 	* Создание метода для вывода содержимого в консоль
- 	*/
+	 * 
+	 * @return адресат
+	 */
 	public String getAddress() {
 		return address;
 	}
+	/**
+	 * 
+	 * @param Address
+	 */
 	public void setAddress(String Address) {
 		this.address = Address;
 	}
+	/**
+	 * 
+	 * @return доставка
+	 */
 	public String getDelivery() {
 		return delivery;
 	}
+	/**
+	 * 
+	 * @param Delivery
+	 */
 	public void setDelivery(String Delivery) {
 		this.delivery = Delivery;
 	}
+	/**
+ 	* Создание метода для вывода содержимого в консоль
+ 	*/
+	@Override
 	public String toString() {
    		return "Исходящий документ №" + getRegNumber() +" ID: " + getID() + " " + 
    				getName() + " Дата регистрации: " + getRegDate() + ", Автор: " + getAuthor() + 

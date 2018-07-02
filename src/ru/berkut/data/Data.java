@@ -1,5 +1,6 @@
 package ru.berkut.data;
 /**
+ * @author berkut
  * Создание класса, содержащего массивы исходных данных
  */
 public class Data {

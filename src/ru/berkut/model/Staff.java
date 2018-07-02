@@ -1,5 +1,6 @@
 package ru.berkut.model;
 /**
+ * @author berkut
  * Создание класса абстрактного класса Элемент организационной структуры
  */
 public abstract class Staff {

@@ -11,9 +11,10 @@ import ru.berkut.model.Employees;
 import ru.berkut.model.Person;
 
 /**
-	* Создание класса для загрузки данных из XML-документов
-	*/
-public class Upload {
+* @author berkut
+* Создание класса для загрузки данных из XML-документов
+*/
+public class JAXB {
 	
 	static Employees employees = new Employees();
 	/**
@@ -37,11 +38,16 @@ public class Upload {
 	 	*/
 	    setPersonName(p.getFirstName() + " " + p.getSecondName() + " " + p.getPatronymic());
 	}
-	
+	/**
+	 * @return ФИО сотрудника
+	 */
 	public static String getPersonName() {
 		return personName;
 	}
-	
+	/**
+	 * 
+	 * @param ФИО сотрудника
+	 */
 	public static void setPersonName(String PersonName) {
 		personName = PersonName;
 	}

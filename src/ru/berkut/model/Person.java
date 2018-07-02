@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import ru.berkut.model.Staff;
 /**
+ * @author berkut
  * Создание класса Сотрудник, который наследует абстрактный класс Элемент организационной структуры
  */
 @XmlRootElement(name = "person")

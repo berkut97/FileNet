@@ -1,16 +1,19 @@
 package ru.berkut;
 
-import java.util.Arrays;
-import java.util.List;
+
+import java.text.SimpleDateFormat;
 import java.util.TreeSet;
 
 import javax.xml.bind.JAXBException;
 
-import ru.berkut.factory.Factory;
-import ru.berkut.factory.Storable;
+import ru.berkut.exception.DocumentExistsExeption;
+import ru.berkut.factory.FactoryGeneration;
+import ru.berkut.factory.Generator;
+import ru.berkut.factory.Storage;
 import ru.berkut.model.Document;
-import ru.berkut.factory.DocumentExistsExeption;
+import ru.berkut.utils.DocumentType;
 /**
+ * @author berkut
  * Создание класса консольного приложения 
  */
 public class Application {
@@ -19,46 +22,46 @@ public class Application {
 		/**
 		 * Сохранение создаваемых документор
 		 */
-		Factory factory = new Factory();	
+		final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
+		Generator generator = new Generator();	
 		/**
 		 * Задание типа создаваемых документов
 		 */
-		List<String> setOfDocuments = Arrays.asList("Incoming", "Task", "Outgoing");
 		/**
 		 * Создание документов
 		 */
-		setOfDocuments.forEach(document -> {     	       	
+		for (DocumentType type : DocumentType.values()) {  
         	try {
-        		Document d=factory.MakeDocument(document);
+        		Document d=generator.MakeDocument(type);
         		System.out.println(d.toString());
         	} catch(DocumentExistsExeption docEx){
         		System.out.println(docEx.getMessage());	
         	} catch (JAXBException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}        	      	    	
-		});
+			}        	
+		};
 		/**
 		 * Сохранение авторов документов
 		 */
 		 TreeSet<String> setOfAuthors = new TreeSet<String>();   		 	
-           for (Document e: Storable.data) {        	
+           for (Document e: Storage.data) {        	
            setOfAuthors.add(e.getAuthor()); 
            }
            /**
 		  	* Создание отчета
 		 	*/
-           for (String s: setOfAuthors) {
-        	   System.out.println(" - " + s);        	        	
-        	   for (Document d: Storable.data) {
-        		   if (s.equals(d.getAuthor())) {
-                		System.out.println("       - "+Factory.type(d)+ " от " +
-                		Factory.dateFormat.format(d.getRegDate()) + " Рег.№: " + d.getRegNumber());
+           setOfAuthors.forEach(author -> { 
+        	   System.out.println(" - " + author);        	        	
+        	   for (Document d: Storage.data) {
+        		   if (author.equals(d.getAuthor())) {
+                		System.out.println("       - " + 
+                		Generator.type(d) + " от " +               				
+                		dateFormat.format(d.getRegDate()) + " Рег.№: " + d.getRegNumber());
                 		}
         		
                 	}       
-		
-            }
+            });
         }
 	
 }
