@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Employees>
+    <Person>
+        <firstName>Тимур</firstName>
+        <secondName>Богданов</secondName>
+        <patronymic>Рустемович</patronymic>
+        <post>Практикант</post>
+    </Person>
+    <Person>
+        <firstName>Юлия</firstName>
+        <secondName>Бикбаева</secondName>
+        <patronymic>Владиславовна</patronymic>
+        <post>Практикант</post>
+    </Person>
+    <Person>
+        <firstName>Анастасия</firstName>
+        <secondName>Грушина</secondName>
+        <patronymic>Алексеевна</patronymic>
+        <post>Практикант</post>
+    </Person>
+</Employees>
