@@ -2,8 +2,10 @@ package ru.berkut;
 
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import ru.berkut.exception.DocumentExistsExeption;
-import ru.berkut.factory.FactoryGeneration;
 import ru.berkut.factory.Generator;
 import ru.berkut.factory.Storage;
 import ru.berkut.model.Document;
