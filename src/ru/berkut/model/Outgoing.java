@@ -7,7 +7,7 @@ public class Outgoing extends Document{
 	/**
 	* Создание переменной, содержащей адресата
 	*/
-	private String address;
+	private Person address;
 	/**
 	* Создание переменной, содержащей способ доставки
 	*/
@@ -16,15 +16,15 @@ public class Outgoing extends Document{
 	 * 
 	 * @return адресат
 	 */
-	public String getAddress() {
+	public Person getAddress() {
 		return address;
 	}
 	/**
 	 * 
-	 * @param Address
+	 * @param person
 	 */
-	public void setAddress(String Address) {
-		this.address = Address;
+	public void setAddress(Person person) {
+		this.address = person;
 	}
 	/**
 	 * 

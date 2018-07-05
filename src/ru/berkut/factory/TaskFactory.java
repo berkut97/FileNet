@@ -26,7 +26,7 @@ public class TaskFactory extends Factory{
 		task.setTerm(FactoryGeneration.getRandomDate(3000));    	
 		task.setExecutor(FactoryGeneration.getRandomUser());  
 		task.setController(FactoryGeneration.getRandomUser());
-		task.setAttrControl(FactoryGeneration.getRandomUser());    	
+		task.setAttrControl(Data.AttrControl[new Random().nextInt(4)]);    	
 		return task;
 	} 
 }

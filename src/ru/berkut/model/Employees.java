@@ -23,12 +23,5 @@ public class Employees{
     public List<Person> getEmployees() {
         return employees;
     }
-    /**
-     * 
-     * @param employees
-     */
-    public void setEmployees(List<Person> employees) {
-        this.employees = employees;
-    }
     
 }

@@ -1,11 +1,14 @@
 package ru.berkut.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 /**
  * @author berkut
  * Создание абстрактного  класса Документ
  */
 public abstract class Document implements Comparable<Object>{
+public static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 /**
  * Объявление переменной, содержащей идентификатор документа
  */
@@ -29,7 +32,7 @@ private Date regDate;
 /**
  * Объявление переменной, содержащей автора документа
  */
-private String author;
+private Person author;
 	/**
 	 * 
 	 * @return идентификатор
@@ -104,31 +107,25 @@ private String author;
 	 * 
 	 * @return автор
 	 */
-	public String getAuthor() {
+	public Person getAuthor() {
 		return author;
 	}
 	/**
 	 * 
-	 * @param Author
+	 * @param person
 	 */
-	public void setAuthor(String Author) {
-		this.author = Author;
+	public void setAuthor(Person person) {
+		this.author = person;
 	}
 	
 	public int compareTo(Object obj){ 
 		
 			Document entry = (Document) obj; 
 			/**
-			 * Сортировка по автору
-			 */
-			String author=this.author;
-			int result = author.compareTo(entry.author);
-			if(result != 0)	return result;
-			/**
 			 * Сортировка по дате регистации документа
 			 */
 			Date dateDoc = this.regDate;
-			result = dateDoc.compareTo(entry.regDate); 
+			int result = dateDoc.compareTo(entry.regDate); 
 			if(result != 0) return result; 
 			/**
 			 * Сортировка по регистрационному номеру документа
@@ -138,6 +135,10 @@ private String author;
 			if(result!=0) 
 				return (int) result/Math.abs(result); 
 			return 0; 
+	}
+	public String print() {
+		return  " от " +               				
+				dateFormat.format(getRegDate()) + " Рег.№: " + getRegNumber();
 	} 
 	
 }

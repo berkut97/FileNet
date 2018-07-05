@@ -13,7 +13,7 @@ import ru.berkut.model.Staff;
 
 @XmlType(propOrder = {"firstName", "secondName", "patronymic", "post"})
 
-public class Person extends Staff{
+public class Person extends Staff implements Comparable<Person>{
 	
 	private String firstName;
 	
@@ -63,10 +63,21 @@ public class Person extends Staff{
 	public void setPost(String Post) {
 		this.post = Post;
 	}
-	
+	public String getPersonName() {
+		String personName = getFirstName() + " " + getSecondName() + " " + getPatronymic();
+		return personName;
+	}
 	public String toString() {
         return " " + firstName + " " + secondName + " "
 	+ patronymic + " Должность: " + post + " ";
     }
+	@Override
+	public int compareTo(Person entry) {
+		String author=this.getPersonName();		
+		int result = author.compareTo(entry.getPersonName());
+		if(result != 0)
+		return result;
+		return 0;
+	}
 	
 }

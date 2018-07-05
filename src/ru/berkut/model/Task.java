@@ -18,7 +18,7 @@ public class Task extends Document{
 	/**
 	* Создание переменной, содержащей исполнителя
 	*/
-	String executor;
+	Person executor;
 	/**
 	* Создание переменной, содержащей признак контрольности
 	*/
@@ -26,7 +26,7 @@ public class Task extends Document{
 	/**
 	* Создание переменной, содержащей контрелера поручения
 	*/
-	String  controller;
+	Person  controller;
 	/**
 	 * 
 	 * @return дата поручения
@@ -59,15 +59,15 @@ public class Task extends Document{
 	 * 
 	 * @return исполнитель
 	 */
-	public String getExecutor() {
+	public Person getExecutor() {
 		return executor;
 	}
 	/**
 	 * 
-	 * @param Executor
+	 * @param person
 	 */
-	public void setExecutor(String Executor) {
-		this.executor = Executor;
+	public void setExecutor(Person person) {
+		this.executor = person;
 	}
 	/**
 	 * 
@@ -87,15 +87,15 @@ public class Task extends Document{
 	 * 
 	 * @return контролер
 	 */
-	public String getController() {
+	public Person getController() {
 		return controller;
 	}
 	/**
 	 * 
-	 * @param Controller
+	 * @param person
 	 */
-	public void setController(String Controller) {
-		this.controller = Controller;
+	public void setController(Person person) {
+		this.controller = person;
 	}
 	/**
 	* Создание метода для вывода содержимого в консоль

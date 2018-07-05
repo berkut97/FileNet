@@ -24,19 +24,29 @@ public class JAXB {
 	/**
   	* Создание метода для загрузки данных сотрудника из XML-документа
  	*/
-	public static void unMarshalingPerson() throws JAXBException
+	public static Object unMarshalingPerson(File file, Class<?> classOfObject) throws JAXBException
 	{
-	    JAXBContext jaxbContext = JAXBContext.newInstance(Employees.class);
-	    Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-	    Employees emps = (Employees) jaxbUnmarshaller.unmarshal( new File(System.getProperty("user.dir")+ File.separator + "Person.xml"));
-	    /**
-		 * Выбор случайного сотрудника
-		 */
-	    Person p = emps.getEmployees().get(new Random().nextInt(3));
-	    /**
-	  	* Составление переменной PersonName из данных, полученных из документа
-	 	*/
-	    setPersonName(p.getFirstName() + " " + p.getSecondName() + " " + p.getPatronymic());
+		try {
+ 			JAXBContext jaxbContext = JAXBContext.newInstance(classOfObject);		
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller(); 	     
+			Object obj = (Object) jaxbUnmarshaller.unmarshal(file); 	    
+			return obj; 
+		} catch (JAXBException e) {			
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static Object unMarshaling(File file, Class<?> classOfObject) {
+ 		
+ 		try {
+ 			JAXBContext jaxbContext = JAXBContext.newInstance(classOfObject);		
+			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller(); 	     
+			Object obj = (Object) jaxbUnmarshaller.unmarshal(file); 	    
+			return obj; 
+		} catch (JAXBException e) {			
+			e.printStackTrace();
+		}
+		return null;
 	}
 	/**
 	 * @return ФИО сотрудника

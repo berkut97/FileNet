@@ -1,5 +1,6 @@
 package ru.berkut.factory;
 
+import java.io.File;
 import java.math.BigInteger;
 
 import java.security.SecureRandom;
@@ -14,8 +15,10 @@ import ru.berkut.data.Data;
 import ru.berkut.data.JAXB;
 import ru.berkut.exception.DocumentExistsExeption;
 import ru.berkut.model.Document;
+import ru.berkut.model.Employees;
 import ru.berkut.model.Incoming;
 import ru.berkut.model.Outgoing;
+import ru.berkut.model.Person;
 import ru.berkut.model.Task;
 import ru.berkut.utils.DocumentType;
 /**
@@ -23,6 +26,7 @@ import ru.berkut.utils.DocumentType;
  * Создание класса с методами создания полей документов
  */
 public class FactoryGeneration {
+	public static Employees loadedEmployees = new Employees(); 
 	/**
 	 * @return регистациооный номер документа
 	 */
@@ -34,9 +38,8 @@ public class FactoryGeneration {
 	 * @return случайный сотрудник
 	 * @throws JAXBException
 	 */
-	public static String getRandomUser() throws JAXBException{
-		JAXB.unMarshalingPerson();
-        return JAXB.getPersonName();
+	public static Person getRandomUser() throws JAXBException{
+		return loadedEmployees.getEmployees().get(new Random().nextInt(loadedEmployees.getEmployees().size()));
 	}	
 	/**
 	 * 
@@ -56,6 +59,10 @@ public class FactoryGeneration {
 	 */
 	public static Date getRandomDate(int daysBack) {
 		return new Date(System.currentTimeMillis() - ThreadLocalRandom.current().nextLong(1000*60*60*24*daysBack));
+	}
+	public static void loadStaff() {
+		File fileEmployees = new File("C:\\Users\\user\\git\\FileNet\\Person.xml");
+		loadedEmployees=(Employees)JAXB.unMarshaling(fileEmployees, Employees.class);
 	}
 	
 }

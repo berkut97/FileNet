@@ -10,11 +10,11 @@ public class Incoming extends Document{
 /**
 * Создание переменной, содержащей отправителя
 */
-private String sender;
+private Person sender;
 /**
 * Создание переменной, содержащей адресата
 */
-private String address;
+private Person address;
 /**
 * Создание переменной, содержащей исходящий номер 
 */
@@ -27,29 +27,29 @@ private Date outDataReg;
 	 * 
 	 * @return отправитель
 	 */
-	public String getSender() {
+	public Person getSender() {
 		return sender;
 	}
 	/**
 	 * 
-	 * @param Sender
+	 * @param person
 	 */
-	public void setSender(String Sender) {
-		this.sender = Sender;
+	public void setSender(Person person) {
+		this.sender = person;
 	}
 	/**
 	 * 
 	 * @return адресат 
 	 */
-	public String getAddress() {
+	public Person getAddress() {
 		return address;
 	}
 	/**
 	 * 
-	 * @param Address
+	 * @param person
 	 */
-	public void setAddress(String Address) {
-		this.address = Address;
+	public void setAddress(Person person) {
+		this.address = person;
 	}
 	/**
 	 * 
