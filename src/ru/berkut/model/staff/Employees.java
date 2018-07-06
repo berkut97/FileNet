@@ -1,4 +1,4 @@
-package ru.berkut.model;
+package ru.berkut.model.staff;
 
 import java.util.List;
 

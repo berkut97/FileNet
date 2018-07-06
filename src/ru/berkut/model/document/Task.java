@@ -1,4 +1,4 @@
-package ru.berkut.model;
+package ru.berkut.model.document;
 
 import java.util.Date;
 
@@ -102,8 +102,8 @@ public class Task extends Document{
 	*/
 	 @Override
 	public String toString() {
-		return "Поручение № "+ getRegNumber() + " ID:  " + getRegDate() + " " + getName() +
-			" Дата регистрации: " + getDate() + ", Автор: " + getAuthor() + 
+		return "Поручение № "+ getRegNumber() + " ID:  " + getID() + " " + getName() +
+			" Дата регистрации: " + getRegDate() + ", Автор: " + getAuthor() + 
 			" Текст документа: "+ getText() + " Дата выдачи: "+ date +
 			" Срок исполнения: " + term + " Ответственный исполнитель: "+ 
 			executor+ " Признак контрольности: "+ attrControl +" Контролер: "

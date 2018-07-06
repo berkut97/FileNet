@@ -3,7 +3,7 @@ package ru.berkut.factory;
 import java.util.TreeSet;
 
 import ru.berkut.exception.DocumentExistsExeption;
-import ru.berkut.model.Document;
+import ru.berkut.model.document.Document;
 
 public class Storage {
 	public static TreeSet<Document> data = new TreeSet<Document>();	

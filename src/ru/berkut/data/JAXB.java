@@ -7,8 +7,8 @@ import javax.xml.bind.JAXBException;
 
 import javax.xml.bind.Unmarshaller;
 
-import ru.berkut.model.Employees;
-import ru.berkut.model.Person;
+import ru.berkut.model.staff.Employees;
+import ru.berkut.model.staff.Person;
 
 /**
 * @author berkut

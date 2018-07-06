@@ -5,8 +5,8 @@ import java.util.Random;
 import javax.xml.bind.JAXBException;
 
 import ru.berkut.data.Data;
-import ru.berkut.model.Document;
-import ru.berkut.model.Outgoing;
+import ru.berkut.model.document.Document;
+import ru.berkut.model.document.Outgoing;
 
 public class OutgoingFactory extends Factory{
 	/**

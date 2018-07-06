@@ -4,20 +4,11 @@ import java.math.BigInteger;
 
 import java.security.SecureRandom;
 import java.util.Date;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import javax.swing.Spring;
 import javax.xml.bind.JAXBException;
 
-import ru.berkut.data.Data;
 import ru.berkut.data.JAXB;
-import ru.berkut.exception.DocumentExistsExeption;
-import ru.berkut.model.Document;
-import ru.berkut.model.Incoming;
-import ru.berkut.model.Outgoing;
-import ru.berkut.model.Task;
-import ru.berkut.utils.DocumentType;
 /**
  * @author berkut
  * Создание класса с методами создания полей документов

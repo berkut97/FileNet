@@ -18,7 +18,7 @@ import ru.berkut.exception.DocumentExistsExeption;
 import ru.berkut.factory.FactoryGeneration;
 import ru.berkut.factory.Generator;
 import ru.berkut.factory.Storage;
-import ru.berkut.model.Document;
+import ru.berkut.model.document.Document;
 import ru.berkut.utils.DocumentType;
 /**
  * @author berkut

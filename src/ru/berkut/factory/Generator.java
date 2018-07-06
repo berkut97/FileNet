@@ -3,10 +3,10 @@ package ru.berkut.factory;
 import javax.xml.bind.JAXBException;
 
 import ru.berkut.exception.DocumentExistsExeption;
-import ru.berkut.model.Document;
-import ru.berkut.model.Incoming;
-import ru.berkut.model.Outgoing;
-import ru.berkut.model.Task;
+import ru.berkut.model.document.Document;
+import ru.berkut.model.document.Incoming;
+import ru.berkut.model.document.Outgoing;
+import ru.berkut.model.document.Task;
 import ru.berkut.utils.DocumentType;
 
 /**

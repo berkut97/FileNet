@@ -1,4 +1,4 @@
-package ru.berkut.model;
+package ru.berkut.model.document;
 
 import java.util.Date;
 
@@ -7,22 +7,22 @@ import java.util.Date;
  * Создание класса Входящий документ, который наследует абстрактный класс Документ
  */
 public class Incoming extends Document{
-/**
-* Создание переменной, содержащей отправителя
-*/
-private String sender;
-/**
-* Создание переменной, содержащей адресата
-*/
-private String address;
-/**
-* Создание переменной, содержащей исходящий номер 
-*/
-private int outNumber;
-/**
-* Создание переменной, содержащей исходящую дату регистации
-*/
-private Date outDataReg;
+	/**
+	 * Создание переменной, содержащей отправителя
+	 */
+	private String sender;
+	/**
+	 * Создание переменной, содержащей адресата
+	 */
+	private String address;
+	/**
+	 * Создание переменной, содержащей исходящий номер 
+	 */
+	private int outNumber;
+	/**
+	 * Создание переменной, содержащей исходящую дату регистации
+	 */
+	private Date outDataReg;
 	/**
 	 * 
 	 * @return отправитель

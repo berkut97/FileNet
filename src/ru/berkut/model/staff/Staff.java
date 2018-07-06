@@ -1,4 +1,4 @@
-package ru.berkut.model;
+package ru.berkut.model.staff;
 /**
  * @author berkut
  * Создание класса абстрактного класса Элемент организационной структуры
