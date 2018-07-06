@@ -6,11 +6,17 @@ package ru.berkut.model.staff;
 public abstract class Staff {
 	
 	private String staffID;
-	
+	/**
+	 * 
+	 * @return идентификатор
+	 */
 	public String getStaffID() {
 		return staffID;
 	}
-	
+	/**
+	 * 
+	 * @param StaffID
+	 */
 	public void setStaffID(String StaffID) {
 		this.staffID = StaffID;
 	}
