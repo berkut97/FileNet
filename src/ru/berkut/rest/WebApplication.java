@@ -9,7 +9,7 @@ import ru.berkut.factory.FactoryGeneration;
 import ru.berkut.factory.Generator;
 import ru.berkut.utils.DocumentType;
 
-@ApplicationPath("/Appl")
+@ApplicationPath("/ecm")
 public class WebApplication extends Application  {
 	public WebApplication() throws JAXBException{
 		FactoryGeneration.loadStaff();

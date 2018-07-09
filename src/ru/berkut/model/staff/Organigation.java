@@ -1,6 +1,6 @@
-package ru.berkut.model;
+package ru.berkut.model.staff;
 
-import ru.berkut.model.Staff;
+import ru.berkut.model.staff.Staff;
 /**
  * @author berkut
  * Создание класса Организация, который наследует абстрактный класс Элемент организационной структуры

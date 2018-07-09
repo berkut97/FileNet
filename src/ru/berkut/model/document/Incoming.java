@@ -1,6 +1,8 @@
-package ru.berkut.model;
+package ru.berkut.model.document;
 
 import java.util.Date;
+
+import ru.berkut.model.staff.Person;
 
 /**
  * @author berkut

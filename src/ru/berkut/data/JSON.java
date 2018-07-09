@@ -1,6 +1,5 @@
 package ru.berkut.data;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -8,8 +7,8 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import ru.berkut.model.Document;
-import ru.berkut.model.Person;
+import ru.berkut.model.document.Document;
+import ru.berkut.model.staff.Person;
 
 
 public class JSON {
@@ -17,7 +16,7 @@ public class JSON {
 	  	   Gson gson = new GsonBuilder()
 	   				.setPrettyPrinting()
 	   				.create();
-	   		try (FileWriter writer = new FileWriter(System.getProperty("user.dir")+ File.separator + author.getPersonName() + ".json")){						      
+	   		try (FileWriter writer = new FileWriter("C:\\Users\\user\\git\\FileNet" + author.getPersonName() + ".json")){						      
 	   			String json = gson.toJson(documentsOfAuthor);
 	   			writer.write(json);
 	   		} catch (IOException e1) {

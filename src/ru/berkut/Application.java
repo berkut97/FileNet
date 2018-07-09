@@ -1,9 +1,6 @@
 package ru.berkut;
 
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.TreeSet;
 
 import javax.xml.bind.JAXBException;
@@ -13,8 +10,8 @@ import ru.berkut.exception.DocumentExistsExeption;
 import ru.berkut.factory.FactoryGeneration;
 import ru.berkut.factory.Generator;
 import ru.berkut.factory.Storage;
-import ru.berkut.model.Document;
-import ru.berkut.model.Person;
+import ru.berkut.model.document.Document;
+import ru.berkut.model.staff.Person;
 import ru.berkut.utils.DocumentType;
 import ru.berkut.utils.ReportUtil;
 import ru.berkut.data.JSON;

@@ -5,17 +5,20 @@
         <secondName>Богданов</secondName>
         <patronymic>Рустемович</patronymic>
         <post>Практикант</post>
+		<staffID>1</staffID>
     </Person>
     <Person>
         <firstName>Юлия</firstName>
         <secondName>Бикбаева</secondName>
         <patronymic>Владиславовна</patronymic>
         <post>Практикант</post>
+		<staffID>2</staffID>
     </Person>
     <Person>
         <firstName>Анастасия</firstName>
         <secondName>Грушина</secondName>
         <patronymic>Алексеевна</patronymic>
         <post>Практикант</post>
+		<staffID>3</staffID>
     </Person>
 </Employees>

@@ -1,10 +1,10 @@
-package ru.berkut.model;
+package ru.berkut.model.staff;
 
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import ru.berkut.model.Staff;
+import ru.berkut.model.staff.Staff;
 /**
  * @author berkut
  * Создание класса Сотрудник, который наследует абстрактный класс Элемент организационной структуры

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
-import ru.berkut.model.Document;
-import ru.berkut.model.Person;
+import ru.berkut.model.document.Document;
+import ru.berkut.model.staff.Person;
 
 public class ReportUtil {
 	public static void printReport(TreeSet<Document> data){

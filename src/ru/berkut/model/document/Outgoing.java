@@ -1,4 +1,7 @@
-package ru.berkut.model;
+package ru.berkut.model.document;
+
+import ru.berkut.model.staff.Person;
+
 /**
  * @author berkut
  * Создание класса Исходящий документ, который наследует абстрактный класс Документ
