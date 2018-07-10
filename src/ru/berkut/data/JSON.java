@@ -10,8 +10,17 @@ import com.google.gson.GsonBuilder;
 import ru.berkut.model.document.Document;
 import ru.berkut.model.staff.Person;
 
-
+/**
+ * 
+ * @author berkut
+ *
+ */
 public class JSON {
+	/**
+	 * Создание метода для формирования отчетов по авторам в JSON-файле
+	 * @param author
+	 * @param documentsOfAuthor
+	 */
 	public static  void createReport(Person author, List<Document> documentsOfAuthor) {
 	  	   Gson gson = new GsonBuilder()
 	   				.setPrettyPrinting()
@@ -23,6 +32,11 @@ public class JSON {
 	   			e1.printStackTrace();
 	   	}
 	}
+	/**
+	 * Создание метода для извлечения данных из JSON-файла
+	 * @param object
+	 * @return данные из JSON-файла
+	 */
 public String jsonToString(Object object){
 		
 		Gson gson = new GsonBuilder()

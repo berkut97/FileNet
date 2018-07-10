@@ -60,6 +60,9 @@ public class FactoryGeneration {
 	public static Date getRandomDate(int daysBack) {
 		return new Date(System.currentTimeMillis() - ThreadLocalRandom.current().nextLong(1000*60*60*24*daysBack));
 	}
+	/**
+	 * Создание метода для загрузки данных о элементах организационной структуры из XML-файла
+	 */
 	public static void loadStaff() {
 		File fileEmployees = new File("C:\\Users\\user\\git\\FileNet\\Person.xml");
 		loadedEmployees=(Employees)JAXB.unMarshaling(fileEmployees, Employees.class);

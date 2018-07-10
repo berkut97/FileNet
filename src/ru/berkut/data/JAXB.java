@@ -22,7 +22,8 @@ public class JAXB {
  	*/
 	private static String personName;
 	/**
-  	* Создание метода для загрузки данных сотрудника из XML-документа
+  	* Создание метода для загрузки данных из XML-документа
+  	* return объект с данными
  	*/
 	public static Object unMarshaling(File file, Class<?> classOfObject) {
  		
@@ -36,6 +37,11 @@ public class JAXB {
 		}
 		return null;
 	}
+	/**
+	 * Создания метода преобразования данных в XML-документ
+	 * @param object
+	 * @return результат преобразования 
+	 */
 	public static String marshaling(Object object)  {
 		JAXBContext jaxbContext;
 		try {

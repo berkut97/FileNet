@@ -46,6 +46,9 @@ public class Application {
 		 */
 		 TreeSet<Person> setOfAuthors = ReportUtil.authorsToSet(Storage.data);
 		 ReportUtil.printReport(Storage.data);
+		 /**
+		  * Вывод отчета по каждому автору в Json-файлы
+		  */
 		 for (Person authorFromSet: setOfAuthors) {
 		 new JSON();
 		 JSON.createReport(authorFromSet, ReportUtil.getDocumentsOfAuthor(Storage.data, authorFromSet));
