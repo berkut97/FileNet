@@ -44,7 +44,7 @@ public class DerbyDBManager {
 	
 	private static void printSQLException(SQLException se) {
 	    while(se != null) {
-	        System.out.print("SQLException: State:   " + se.getSQLState());
+	        System.out.print("SQLException: State: " + se.getSQLState());
 	        System.out.println("Severity: " + se.getErrorCode());
 	        System.out.println(se.getMessage());            
 	         
